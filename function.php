@@ -1,22 +1,25 @@
 <?php 
 	function getDB(){
-		$dsn = "mysql:host=localhost;dbname=shoestore";
-		$username = "root";
-		$password = '';
-		$options=array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8");
-		
-		try {
-			$db = new PDO($dsn, $username, $password,$options);
-			return $db;					
-		} catch (PDOException $e) {
-			$error_message = $e->getMessage();
-			echo "Error connecting to database".$error_message; 
-		}
+if (empty(getenv("DATABASE_URL"))){
+    echo '<p>The DB does not exist</p>';
+    $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
+}  else {
+     echo '<p>The DB exists</p>';
+     echo getenv("dbname");
+   $db = parse_url(getenv("DATABASE_URL"));
+   $pdo = new PDO("pgsql:" . sprintf(
+        "host=ec2-54-227-251-33.compute-1.amazonaws.com;port=5432;user=vnkmjonwfpwbuo;password=cd185cb699a7b564675f0c0c86de18da272c5125cb6c0b13fd8e806f34861a89;dbname=dd80n3h55g0rvh",
+        $db["host"],
+        $db["port"],
+        $db["user"],
+        $db["pass"],
+        ltrim($db["path"], "/")
+   ));
 	}
 
 	function get_categories(){
 		$db = getDB();// Connect to database
-		$query ="SELECT * FROM categories ORDER BY categoryID";
+		$query ="SELECT * FROM public.categories ORDER BY categoryID";
 		try {
 			$statement = $db->prepare($query);
 			$statement->execute();
