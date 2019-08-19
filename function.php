@@ -1,6 +1,6 @@
 <?php 
 	function getDB(){
-   if (empty(getenv("DATABASE_URL"))){
+if (empty(getenv("DATABASE_URL"))){
     echo '<p>The DB does not exist</p>';
     $pdo = new PDO('pgsql:host=localhost;port=5432;dbname=mydb', 'postgres', '123456');
 }  else {
@@ -15,7 +15,7 @@
         $db["pass"],
         ltrim($db["path"], "/")
    ));
-}  
+} 
 	}
 	?>
 
@@ -38,12 +38,13 @@
 
 	function add_category($categoryName, $description){
 		$db = getDB();// Connect to database
-		$query ="INSERT INTO categories(categoryName, description)
-				VALUES (?,?)";
+		$query ="INSERT INTO public.categories("categoryID", "categoryName", "description")
+				VALUES ('?', '?', '?')";
 		try {
 			$statement = $db->prepare($query);
-			$statement->bindParam(1,$categoryName);
-			$statement->bindParam(2,$description);
+			$statement->bindParam(1,$categoryID);
+			$statement->bindParam(2,$categoryName);
+			$statement->bindParam(3,$description);
 			$statement->execute();
 			$statement->closeCursor();			
 		} catch (PDOException $e) {
