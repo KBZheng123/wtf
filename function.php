@@ -24,7 +24,7 @@ if (empty(getenv("DATABASE_URL"))){
 
 	function get_categories(){
 		$db = getDB();// Connect to database
-		$query ="SELECT * FROM categories ORDER BY categoryID";
+		$query ="SELECT * FROM public.categories ORDER BY 1";
 		try {
 			$statement = $db->prepare($query);
 			$statement->execute();
