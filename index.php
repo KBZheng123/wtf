@@ -43,7 +43,7 @@ ddsmoothmenu.init({
 <div id="templatemo_wrapper">
 
 	<div id="templatemo_header">
-    	<div id="site_title"><h1><a href="#">Online Shoes Store</a></h1></div>
+    	<div id="site_title"><h1><a href="#">Online Toy Store</a></h1></div>
         <div id="header_right">
         	<p>
 	        <a href="#">My Account</a> | <a href="#">My Wishlist</a> | <a href="#">My Cart</a> | <a href="#">Checkout</a> | <a href="#">Log In</a></p>
