@@ -63,7 +63,7 @@ echo '<p>Product information:</p>';
         <td><?php echo $row['categoryID'] ?></td>
         <td><?php echo $row['price'] ?></td>
         <td><?php echo $row['description'] ?></td>
-        <td><?php echo $row['imgage'] ?></td>
+        <td><?php echo $row['image'] ?></td>
         
       </tr>
      
