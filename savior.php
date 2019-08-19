@@ -44,7 +44,6 @@ echo '<p>Product information:</p>';
       <tr>
         <th>productID</th>
         <th>productName</th>
-        <th>categoryID</th>
         <th>price</th>
         <th>description</th>
         <th>image</th>
@@ -60,7 +59,6 @@ echo '<p>Product information:</p>';
       <tr>
         <td scope="row"><?php echo $row['productID'] ?></td>
         <td><?php echo $row['productName'] ?></td>
-        <td><?php echo $row['categoryID'] ?></td>
         <td><?php echo $row['price'] ?></td>
         <td><?php echo $row['description'] ?></td>
         <td><?php echo $row['image'] ?></td>
