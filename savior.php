@@ -59,7 +59,7 @@ echo '<p>Product information:</p>';
    
       <tr>
         <td scope="row"><?php echo $row['productID'] ?></td>
-        <td><?php echo $row['productname'] ?></td>
+        <td><?php echo $row['productName'] ?></td>
         <td><?php echo $row['categoryID'] ?></td>
         <td><?php echo $row['price'] ?></td>
         <td><?php echo $row['description'] ?></td>
