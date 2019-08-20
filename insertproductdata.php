@@ -11,7 +11,7 @@ list-style: none;
 </head>
 <body>
 <h1>INSERT DATA TO DATABASE</h1>
-<h2>Enter data into student table</h2>
+<h2>Enter data into product table</h2>
 <ul>
     <form name="insertproductdata" action="insertproductdata.php" method="POST" >
 <li>Product ID:</li><li><input type="text" name="productID" /></li>
@@ -56,6 +56,8 @@ if($pdo === false){
 //$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
 $sql = "INSERT INTO products(productID, productName, price, description)"
         . " VALUES('$_POST[productID]','$_POST[productName]','$_POST[price]','$_POST[description]')";
+        echo ('$_POST[productID]');
+
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
  if (is_null($_POST[productID])) {
