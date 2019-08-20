@@ -55,7 +55,7 @@ if($pdo === false){
 //$stmt->bindParam(':class', 'GCD018');
 //$stmt->execute();
 //$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
-$sql = "UPDATE products SET productname = '$_POST[productname]' price = '$_POST[price]' description = '$_POST[description]' WHERE productid = '$_POST[productid]'";
+$sql = "UPDATE products SET productname = $_POST[productname], price = '$_POST[price]', description = '$_POST[description]' WHERE productid = $_POST[productid]";
       $stmt = $pdo->prepare($sql);
 if($stmt->execute() == TRUE){
     echo "Record updated successfully.";
