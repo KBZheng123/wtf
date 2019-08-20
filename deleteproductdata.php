@@ -14,7 +14,7 @@ list-style: none;
 <h2>Enter data into product table</h2>
 <ul>
     <form name="deleteproductdata" action="deleteproductdata.php" method="POST" >
-<li>Product ID:</li><li><input type="text" name="productID" /></li>
+<li>Product ID:</li><li><input type="text" name="productid" /></li>
 <li><input type="submit" /></li>
 </form>
 </ul>
@@ -51,10 +51,8 @@ if($pdo === false){
 //$stmt->bindParam(':class', 'GCD018');
 //$stmt->execute();
 //$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
-$sql = "DELETE FROM products WHERE productID = $_POST[productID]";
-        
-
-$stmt = $pdo->prepare($sql);
+$sql = "DELETE FROM products WHERE productid = $_POST[productid]";
+        $stmt = $pdo->prepare($sql);
 //$stmt->execute();
 if($stmt->execute() == TRUE){
     echo "Record deleted successfully.";

@@ -44,8 +44,8 @@ echo '<p>Product information:</p>';
 <table class="table table-bordered table-condensed">
     <thead>
       <tr>
-        <th>productID</th>
-        <th>productName</th>
+        <th>productid</th>
+        <th>productname</th>
         <th>price</th>
         <th>description</th>
       </tr>
@@ -58,8 +58,8 @@ echo '<p>Product information:</p>';
       ?>
    
       <tr>
-        <td scope="row"><?php echo $row['productID'] ?></td>
-        <td><?php echo $row['productName'] ?></td>
+        <td scope="row"><?php echo $row['productid'] ?></td>
+        <td><?php echo $row['productname'] ?></td>
         <td><?php echo $row['price'] ?></td>
         <td><?php echo $row['description'] ?></td>
         

@@ -14,8 +14,8 @@ list-style: none;
 <h2>Enter data into product table</h2>
 <ul>
     <form name="insertproductdata" action="insertproductdata.php" method="POST" >
-<li>Product ID:</li><li><input type="text" name="productID" /></li>
-<li>Product name:</li><li><input type="text" name="productName" /></li>
+<li>Product ID:</li><li><input type="text" name="productid" /></li>
+<li>Product name:</li><li><input type="text" name="productname" /></li>
 <li>price:</li><li><input type="text" name="price" /></li>
 <li>description:</li><li><input type="text" name="description" /></li>
 <li><input type="submit" /></li>
@@ -55,12 +55,12 @@ if($pdo === false){
 //$stmt->execute();
 //$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
 $sql = "INSERT INTO products "
-        . " VALUES('$_POST[productID]','$_POST[productName]',$_POST[price],'$_POST[description]')";
+        . " VALUES('$_POST[productid]','$_POST[productname]',$_POST[price],'$_POST[description]')";
         
 
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
- if (is_null($_POST[productID])) {
+ if (is_null($_POST[productid])) {
    echo "StudentID must be not null";
  }
  else
