@@ -10,6 +10,7 @@ list-style: none;
 </style>
 </head>
 <body>
+<a href="showproduct.php">Click here to return to database<br /></a>
 <h1>INSERT DATA TO DATABASE</h1>
 <h2>Enter data into product table</h2>
 <ul>
@@ -55,7 +56,7 @@ if($pdo === false){
 //$stmt->execute();
 //$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
 $sql = "INSERT INTO products "
-        . " VALUES('$_POST[productid]','$_POST[productname]',$_POST[price],'$_POST[description]')";
+        . " VALUES($_POST[productid],'$_POST[productname]',$_POST[price],'$_POST[description]')";
         
 
 $stmt = $pdo->prepare($sql);
