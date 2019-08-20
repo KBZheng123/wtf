@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
+    <head>
+<title>Insert data to PostgreSQL with php - creating a simple web application</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style>
+li {
+list-style: none;
+}
+</style>
+</head>
 <body>
-
 <h1>INSERT DATA TO DATABASE</h1>
-
+<h2>Enter data into product table</h2>
 <ul>
-<form name="deleteproductdata" action="deleteproductdata.php" method="POST" >
+    <form name="deleteproductdata" action="deleteproductdata.php" method="POST" >
 <li>Product ID:</li><li><input type="text" name="productID" /></li>
 <li><input type="submit" /></li>
 </form>
 </ul>
 
 <?php
-ini_set('display_errors', 1);
-echo "Insert database!";
-?>
-
-<?php
-
 
 if (empty(getenv("DATABASE_URL"))){
     echo '<p>The DB does not exist</p>';
@@ -34,16 +36,31 @@ if (empty(getenv("DATABASE_URL"))){
         $db["pass"],
         ltrim($db["path"], "/")
    ));
-} 
+}  
 
-$sql = "DELETE FROM products WHERE productID = '$_POST[productID]'";
+if($pdo === false){
+     echo "ERROR: Could not connect Database";
+}
+
+//Khởi tạo Prepared Statement
+//$stmt = $pdo->prepare('INSERT INTO student (stuid, fname, email, classname) values (:id, :name, :email, :class)');
+
+//$stmt->bindParam(':id','SV03');
+//$stmt->bindParam(':name','Ho Hong Linh');
+//$stmt->bindParam(':email', 'Linhhh@fpt.edu.vn');
+//$stmt->bindParam(':class', 'GCD018');
+//$stmt->execute();
+//$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
+$sql = "DELETE FROM products WHERE productID = $_POST[productID]";
+        
+
 $stmt = $pdo->prepare($sql);
+//$stmt->execute();
 if($stmt->execute() == TRUE){
     echo "Record deleted successfully.";
 } else {
     echo "Error deleting record: ";
 }
-
 ?>
 </body>
 </html>
