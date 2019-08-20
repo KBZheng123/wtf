@@ -6,7 +6,7 @@
 
 <?php
 ini_set('display_errors', 1);
-echo "Hello Cloud computing class 0818!";
+echo "This is where we can see the company's products from the database. The page is currently simplistic, but it works.";
 ?>
 
 <?php
