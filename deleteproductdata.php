@@ -5,7 +5,7 @@
 <h1>INSERT DATA TO DATABASE</h1>
 
 <ul>
-<form name="insertproductdata" action="insertproductdata.php" method="POST" >
+<form name="deleteproductdata" action="deleteproductdata.php" method="POST" >
 <li>Product ID:</li><li><input type="text" name="productID" /></li>
 <li><input type="submit" /></li>
 </form>
