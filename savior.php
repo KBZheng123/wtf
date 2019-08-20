@@ -2,7 +2,7 @@
 <html>
 <body>
 
-<h1>DATABASE CONNECTION</h1>
+<center><h1>THE PRODUCTS FROM ATN STORE DATABASE</h1></center>
 
 <?php
 ini_set('display_errors', 1);
