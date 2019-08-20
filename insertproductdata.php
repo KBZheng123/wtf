@@ -54,10 +54,11 @@ if($pdo === false){
 //$stmt->bindParam(':class', 'GCD018');
 //$stmt->execute();
 //$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
-$sql = "INSERT INTO products VALUES('$_POST[productID]','$_POST[productName]','$_POST[price]','$_POST[description]')";
+$sql = "INSERT INTO products(productID, productName, price, description)"
+        . " VALUES('$_POST[productID]','$_POST[productName]','$_POST[price]','$_POST[description]')";
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
- if (is_null($_POST[StudentID])) {
+ if (is_null($_POST[productID])) {
    echo "StudentID must be not null";
  }
  else
