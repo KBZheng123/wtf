@@ -10,15 +10,15 @@ list-style: none;
 </style>
 </head>
 <body>
-<a href="showproduct.php">Click here to return to database<br /></a>
+<a href="showbilldetail.php">Click here to return to database<br /></a>
 <h1>INSERT DATA TO DATABASE</h1>
 <h2>Enter data into product table</h2>
 <ul>
-    <form name="insertproductdata" action="insertproductdata.php" method="POST" >
+    <form name="updatebilldetaildata" action="updatebilldetaildata.php" method="POST" >
+<li>Bill ID:</li><li><input type="text" name="billid" /></li>
 <li>Product ID:</li><li><input type="text" name="productid" /></li>
-<li>Product name:</li><li><input type="text" name="productname" /></li>
-<li>price:</li><li><input type="text" name="price" /></li>
-<li>description:</li><li><input type="text" name="description" /></li>
+<li>Quantity:</li><li><input type="text" name="quantity" /></li>
+<li>Total price:</li><li><input type="text" name="totalprice" /></li>
 <li><input type="submit" /></li>
 </form>
 </ul>
@@ -55,23 +55,14 @@ if($pdo === false){
 //$stmt->bindParam(':class', 'GCD018');
 //$stmt->execute();
 //$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
-$sql = "INSERT INTO products "
-        . " VALUES($_POST[productid],'$_POST[productname]',$_POST[price],'$_POST[description]')";
-        
-
-$stmt = $pdo->prepare($sql);
-//$stmt->execute();
- if (is_null($_POST[productid])) {
-   echo "StudentID must be not null";
- }
- else
- {
-    if($stmt->execute() == TRUE){
-        echo "Record inserted successfully.";
-    } else {
-        echo "Error inserting record: ";
-    }
- }
+$sql = "UPDATE billdetail SET productid = $_POST[productid], quantity = '$_POST[quantity]', totalprice = '$_POST[totalprice]' WHERE billid = $_POST[billid]";
+      $stmt = $pdo->prepare($sql);
+if($stmt->execute() == TRUE){
+    echo "Record updated successfully.";
+} else {
+    echo "Error updating record. ";
+}
+   
 ?>
 </body>
 </html>
