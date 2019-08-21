@@ -52,7 +52,7 @@ if($pdo === false){
 //$stmt->bindParam(':class', 'GCD018');
 //$stmt->execute();
 //$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
-$sql = "DELETE FROM billid WHERE billid = $_POST[billid]";
+$sql = "DELETE FROM bill WHERE billid = $_POST[billid]";
         $stmt = $pdo->prepare($sql);
 //$stmt->execute();
 if($stmt->execute() == TRUE){
