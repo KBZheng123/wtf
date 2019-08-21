@@ -3,9 +3,9 @@
 <body>
 
 <center><h1>THE BILLS FROM ATN STORE DATABASE</h1></center>
-<a href="insertbilldata.php">Click here to add products<br /></a>
-<a href="updatebilldata.php">Click here to edit products<br /></a>
-<a href="deletebilldata.php">Click here to delete products<br /></a>
+<a href="insertbilldata.php">Click here to add bills<br /></a>
+<a href="updatebilldata.php">Click here to edit bills<br /></a>
+<a href="deletebilldata.php">Click here to delete bills<br /></a>
 
 <?php
 ini_set('display_errors', 1);
