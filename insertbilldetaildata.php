@@ -17,7 +17,7 @@ list-style: none;
     <form name="insertbilldetaildata" action="insertbilldetaildata.php" method="POST" >
 <li>Bill ID:</li><li><input type="text" name="billid" /></li>
 <li>Product ID:</li><li><input type="text" name="productid" /></li>
-<li>Quantity:</li><li><input type="text" name="quantity" /></li>
+<li>Quantity:</li><li><input type="text" name="soldquantity" /></li>
 <li>Total price:</li><li><input type="text" name="totalprice" /></li>
 <li><input type="submit" /></li>
 </form>
@@ -56,7 +56,7 @@ if($pdo === false){
 //$stmt->execute();
 //$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
 $sql = "INSERT INTO billdetail "
-        . " VALUES($_POST[billid],$_POST[productid]),'$_POST[quantity]','$_POST[totalprice]')";
+        . " VALUES($_POST[billid],$_POST[productid],'$_POST[quantity]','$_POST[totalprice]')";
         
 
 $stmt = $pdo->prepare($sql);

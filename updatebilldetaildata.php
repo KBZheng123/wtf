@@ -17,7 +17,7 @@ list-style: none;
     <form name="updatebilldetaildata" action="updatebilldetaildata.php" method="POST" >
 <li>Bill ID:</li><li><input type="text" name="billid" /></li>
 <li>Product ID:</li><li><input type="text" name="productid" /></li>
-<li>Quantity:</li><li><input type="text" name="quantity" /></li>
+<li>Quantity:</li><li><input type="text" name="soldquantity" /></li>
 <li>Total price:</li><li><input type="text" name="totalprice" /></li>
 <li><input type="submit" /></li>
 </form>
@@ -55,7 +55,7 @@ if($pdo === false){
 //$stmt->bindParam(':class', 'GCD018');
 //$stmt->execute();
 //$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
-$sql = "UPDATE billdetail SET productid = $_POST[productid], quantity = '$_POST[quantity]', totalprice = '$_POST[totalprice]' WHERE billid = $_POST[billid]";
+$sql = "UPDATE billdetail SET productid = $_POST[productid], soldquantity = '$_POST[quantity]', totalprice = '$_POST[totalprice]' WHERE billid = $_POST[billid]";
       $stmt = $pdo->prepare($sql);
 if($stmt->execute() == TRUE){
     echo "Record updated successfully.";

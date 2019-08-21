@@ -47,7 +47,7 @@ echo '<p>Product information:</p>';
       <tr>
         <th>billid</th>
         <th>productid</th>
-        <th>quantity</th>
+        <th>soldquantity</th>
         <th>totalprice</th>
       </tr>
     </thead>
@@ -61,7 +61,7 @@ echo '<p>Product information:</p>';
       <tr>
         <td scope="row"><?php echo $row['billid'] ?></td>
         <td><?php echo $row['productid'] ?></td>
-        <td><?php echo $row['quantity'] ?></td>
+        <td><?php echo $row['soldquantity'] ?></td>
         <td><?php echo $row['totalprice'] ?></td>
         
       </tr>
