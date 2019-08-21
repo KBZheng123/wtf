@@ -14,7 +14,7 @@ list-style: none;
 <h1>INSERT DATA TO DATABASE</h1>
 <h2>Enter data into product table</h2>
 <ul>
-    <form name="insertbilldata" action="insertbilldata.php" method="POST" >
+    <form name="insertbilldetaildata" action="insertbilldetaildata.php" method="POST" >
 <li>Bill ID:</li><li><input type="text" name="billid" /></li>
 <li>Product ID:</li><li><input type="text" name="productid" /></li>
 <li>Quantity:</li><li><input type="text" name="quantity" /></li>
