@@ -56,7 +56,7 @@ if($pdo === false){
 //$stmt->execute();
 //$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
 $sql = "INSERT INTO billdetail "
-        . " VALUES($_POST[billid],$_POST[productid]),'$_POST[quantity]','$_POST[totalprice]'";
+        . " VALUES($_POST[billid],$_POST[productid]),'$_POST[quantity]','$_POST[totalprice]')";
         
 
 $stmt = $pdo->prepare($sql);
