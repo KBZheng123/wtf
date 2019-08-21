@@ -59,7 +59,7 @@ $sql = "INSERT INTO bill "
 
 $stmt = $pdo->prepare($sql);
 //$stmt->execute();
- if (is_null($_POST[productid])) {
+ if (is_null($_POST[billid])) {
    echo "Bill ID must be not null";
  }
  else
