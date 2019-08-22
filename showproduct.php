@@ -3,6 +3,7 @@
 <body>
 
 <center><h1>THE PRODUCTS FROM ATN STORE DATABASE</h1></center>
+<a href="index.php">Click here to return to homepage<br /></a>
 <a href="insertproductdata.php">Click here to add products<br /></a>
 <a href="updateproductdata.php">Click here to edit products<br /></a>
 <a href="deleteproductdata.php">Click here to delete products<br /></a>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-<title>Insert data to PostgreSQL with php - creating a simple web application</title>
+<title>ATN update bill detail</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style>
 li {
@@ -12,8 +12,8 @@ list-style: none;
 <body>
 <a href="index.php">Click here to return to homepage<br /></a>
 <a href="showbilldetail.php">Click here to return to database<br /></a>
-<h1>INSERT DATA TO DATABASE</h1>
-<h2>Enter data into product table</h2>
+<h1>UPDATE BILL DETAIL</h1>
+<h2>Enter data to update</h2>
 <ul>
     <form name="updatebilldetaildata" action="updatebilldetaildata.php" method="POST" >
 <li>Bill ID:</li><li><input type="text" name="billid" /></li>
