@@ -10,6 +10,7 @@ list-style: none;
 </style>
 </head>
 <body>
+<a href="index.php">Click here to return to homepage<br /></a>
 <a href="showbilldetail.php">Click here to return to database<br /></a>
 <h1>INSERT DATA TO DATABASE</h1>
 <h2>Enter data into product table</h2>

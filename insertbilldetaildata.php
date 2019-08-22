@@ -10,7 +10,8 @@ list-style: none;
 </style>
 </head>
 <body>
-<a href="showbill.php">Click here to return to bill database<br /></a>
+<a href="index.php">Click here to return to homepage<br /></a>
+<a href="showbilldetail.php">Click here to return to bill database<br /></a>
 <h1>INSERT DATA TO DATABASE</h1>
 <h2>Enter data into product table</h2>
 <ul>
@@ -56,7 +57,7 @@ if($pdo === false){
 //$stmt->execute();
 //$sql = "INSERT INTO student(stuid, fname, email, classname) VALUES('SV02', 'Hong Thanh','thanhh@fpt.edu.vn','GCD018')";
 $sql = "INSERT INTO billdetail "
-        . " VALUES($_POST[billid],$_POST[productid],'$_POST[quantity]','$_POST[totalprice]')";
+        . " VALUES($_POST[billid],$_POST[productid],'$_POST[soldquantity]','$_POST[totalprice]')";
         
 
 $stmt = $pdo->prepare($sql);
